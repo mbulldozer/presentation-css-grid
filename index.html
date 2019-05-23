@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			  <section>
+				<h2>CSS Grid</h2>
+				<small>Created by <a href="https://github.com/mbulldozer">Aliaksandr Pauliukavets</a></small>
+			  </section>
+			  <section>
+				<h3>Contents</h3>
+				<ul>
+				  <li><a href="#/2">Terminology</a></li>
+				  <li><a href="#/3">Fr Unit</a></li>
+				  <li><a href="#/4">Justification and Alignment</a></li>
+				  <li><a href="#/5">Grid Gap</a></li>
+				  <li><a href="#/6">Useful links</a></li>
+				</ul>
+			  </section>
+			  <section data-transition="slide">
+				<section>
+				  <h3>Terminology</h3>
+				</section>
+				<section>
+					<h3>Grid Container and Grid Items</h3>
+					<pre class=" language-language">
+						<code class="-css language-language" data-trim data-noescape>.grid-container {
+	display: grid;
+	display: inline-grid;
+	display: subgrid;
+}
+						</code>
+					</pre>
+				  <img src="lib/img/Grid-Container.png" alt="Grid-Container" width="500" />
+				</section>
+				<section>
+					<h3>Special rules:</h3>
+					<ul>
+						<li>The <strong>float</strong> and <strong>clear</strong> properties do not apply to grid items</li>
+						<li>The <strong>vertical-align</strong> property does not affect grid items</li>
+						<li>The <strong>::first-line</strong> and <strong>::first-letter</strong> pseudo-elements do not apply to the grid container</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Grid Lines</h4>
+					<p style="text-align: left;">Grid lines are the horizontal and vertical lines which divide the grid. Each grid line has a referencing number, starting from the outer-most border of the grid container.</p>
+				  	<img src="lib/img/Grid-Lines.png" alt="Grid-Lines" width="500" />
+				</section>
+				<section>
+					<h4>Grid Columns, Grid Rows, and Grid Tracks</h4>
+					<pre class=" language-language">
+						<code class="-css language-language" data-trim data-noescape>.grid-container {
+	display: grid;
+	grid-template-columns: 65px 1fr 65px;
+	grid-template-rows: 100px 100px 100px;
+}
+						</code>
+					</pre>
+				  <img src="lib/img/Grid-Tracks.png" alt="Grid-Tracks" width="500" />
+				</section>
+				<section>
+					<h3>Grid Cell</h3>
+					<p class="codepen" data-height="610" data-theme-id="light" data-default-tab="css,result" data-user="mbulldozer" data-slug-hash="xNYMwg" style="height: 592px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Grid-Cell">
+							<span>See the Pen <a href="https://codepen.io/mbulldozer/pen/xNYMwg/">
+							Grid-Cell</a> by mbulldozer (<a href="https://codepen.io/mbulldozer">@mbulldozer</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+					</p>
+				</section>
+				<section>
+					<h3>Grid Area</h3>
+					<p class="codepen" data-height="610" data-theme-id="light" data-default-tab="css,result" data-user="mbulldozer" data-slug-hash="WBMLga" style="height: 613px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Grid-Area">
+							<span>See the Pen <a href="https://codepen.io/mbulldozer/pen/WBMLga/">
+							Grid-Area</a> by mbulldozer (<a href="https://codepen.io/mbulldozer">@mbulldozer</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+					</p>
+				</section>
+			  </section>
+			  <section>
+					<section>
+						<h3>Fr Unit</h3>
+					</section>
+					<section>
+						<p class="codepen" data-height="440" data-theme-id="light" data-default-tab="css,result" data-user="mbulldozer" data-slug-hash="ZNrwVL" style="height: 441px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Fr unit">
+								<span>See the Pen <a href="https://codepen.io/mbulldozer/pen/ZNrwVL/">
+								Fr unit</a> by mbulldozer (<a href="https://codepen.io/mbulldozer">@mbulldozer</a>)
+								on <a href="https://codepen.io">CodePen</a>.</span>
+						</p>
+					</section>
+			  </section>
+			  <section>
+					<section>
+						<h3>Justification and Alignment</h3>
+					</section>
+					<section>
+						<h3>Properties:</h3>
+						<ul>
+							<li>justify-items</li>
+							<li>align-items</li>
+							<li>justify-content</li>
+							<li>align-content</li>
+							<li>justify-self</li>
+							<li>align-self</li>
+							<li>place-self</li>
+						</ul>
+					</section>
+					<section>
+						<p>justify-items: start | end | center | stretch</p>
+						<table>
+							<tbody>
+								<tr>
+									<td>start</td>
+									<td>end</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/justify-items-start.svg" alt="Example of justify-items set to start" height="500px"></td>
+									<td><img src="lib/img/justify-items-end.svg" alt="Example of justify-items set to end" height="500px"></td>
+								</tr>
+								<tr>
+									<td>center</td>
+									<td>stretch</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/justify-items-center.svg" alt="Example of justify-items set to center" height="500px"></td>
+									<td><img src="lib/img/justify-items-stretch.svg" alt="Example of justify-items set to stretch" height="500px"></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<p>align-items: start | end | center | stretch</p>
+						<table>
+							<tbody>
+								<tr>
+									<td>start</td>
+									<td>end</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/align-items-start.svg" alt="Example of align-items set to start" height="500px"></td>
+									<td><img src="lib/img/align-items-end.svg" alt="Example of align-items set to end" height="500px"></td>
+								</tr>
+								<tr>
+									<td>center</td>
+									<td>stretch</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/align-items-center.svg" alt="Example of align-items set to center" height="500px"></td>
+									<td><img src="lib/img/align-items-stretch.svg" alt="Example of align-items set to stretch" height="500px"></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<p>justify-content: start | end | center | stretch | space-around | space-between | space-evenly</p>
+						<table>
+							<tbody>
+								<tr>
+									<td>start</td>
+									<td>end</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/justify-content-start.svg" alt="Example of justify-content set to start" height="500px"></td>
+									<td><img src="lib/img/justify-content-end.svg" alt="Example of justify-content set to end" height="500px"></td>
+								</tr>
+								<tr>
+									<td>center</td>
+									<td>stretch</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/justify-content-center.svg" alt="Example of justify-content set to center" height="500px"></td>
+									<td><img src="lib/img/justify-content-stretch.svg" alt="Example of justify-content set to stretch" height="500px"></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+							<table>
+								<tbody>
+									<tr>
+										<td>space-around</td>
+										<td>space-between</td>
+									</tr>
+									<tr>
+										<td><img src="lib/img/justify-content-space-around.svg" alt="Example of justify-content set to space-around" height="500px"></td>
+										<td><img src="lib/img/justify-content-space-between.svg" alt="Example of justify-content set to space-between" height="500px"></td>
+									</tr>
+									<tr>
+										<td>space-evenly</td>
+									</tr>
+									<tr>
+										<td><img src="lib/img/justify-content-space-evenly.svg" alt="Example of justify-content set to space-evenly" height="500px"></td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section>
+						<p>align-content: start | end | center | stretch | space-around | space-between | space-evenly</p>
+						<table>
+							<tbody>
+								<tr>
+									<td>start</td>
+									<td>end</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/align-content-start.svg" alt="Example of align-content set to start" height="500px"></td>
+									<td><img src="lib/img/align-content-end.svg" alt="Example of align-content set to end" height="500px"></td>
+								</tr>
+								<tr>
+									<td>center</td>
+									<td>stretch</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/align-content-center.svg" alt="Example of align-content set to center" height="500px"></td>
+									<td><img src="lib/img/align-content-stretch.svg" alt="Example of align-content set to stretch" height="500px"></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<table>
+							<tbody>
+								<tr>
+									<td>space-around</td>
+									<td>space-between</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/align-content-space-around.svg" alt="Example of align-content set to space-around" height="500px"></td>
+									<td><img src="lib/img/align-content-space-between.svg" alt="Example of align-content set to space-between" height="500px"></td>
+								</tr>
+								<tr>
+									<td>space-evenly</td>
+								</tr>
+								<tr>
+									<td><img src="lib/img/align-content-space-evenly.svg" alt="Example of align-content set to space-evenly" height="500px"></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+							<p>justify-self: start | end | center | stretch</p>
+							<table>
+								<tbody>
+									<tr>
+										<td>start</td>
+										<td>end</td>
+									</tr>
+									<tr>
+										<td><img src="lib/img/justify-self-start.svg" alt="Example of justify-self set to start" height="500px"></td>
+										<td><img src="lib/img/justify-self-end.svg" alt="Example of justify-self set to end" height="500px"></td>
+									</tr>
+									<tr>
+										<td>center</td>
+										<td>stretch</td>
+									</tr>
+									<tr>
+										<td><img src="lib/img/justify-self-center.svg" alt="Example of justify-self set to center" height="500px"></td>
+										<td><img src="lib/img/justify-self-stretch.svg" alt="Example of justify-self set to stretch" height="500px"></td>
+									</tr>
+								</tbody>
+							</table>
+					</section>
+					<section>
+							<p>align-self: start | end | center | stretch</p>
+							<table>
+								<tbody>
+									<tr>
+										<td>start</td>
+										<td>end</td>
+									</tr>
+									<tr>
+										<td><img src="lib/img/align-self-start.svg" alt="Example of align-self set to start" height="500px"></td>
+										<td><img src="lib/img/align-self-end.svg" alt="Example of align-self set to end" height="500px"></td>
+									</tr>
+									<tr>
+										<td>center</td>
+										<td>stretch</td>
+									</tr>
+									<tr>
+										<td><img src="lib/img/align-self-center.svg" alt="Example of align-self set to center" height="500px"></td>
+										<td><img src="lib/img/align-self-stretch.svg" alt="Example of align-self set to stretch" height="500px"></td>
+									</tr>
+								</tbody>
+							</table>
+					</section>
+					<section>
+							<p>place-self</p>
+							<p>(sets both the align-self and justify-self properties)</p>
+							<table>
+								<tbody>
+									<tr>
+										<td>center</td>
+										<td>center stretch</td>
+									</tr>
+									<tr>
+										<td><img src="lib/img/place-self-center.svg" alt="Example of place-self set to center" height="500px"></td>
+										<td><img src="lib/img/place-self-center-stretch.svg" alt="Example of place-self set to center stretch" height="500px"></td>
+									</tr>
+								</tbody>
+							</table>
+					</section>
+			  </section>
+			  <section>
+					<section>
+						<h3>Grid Gap</h3>
+					</section>
+					<section>
+						<h3>Properties:</h3>
+						<ul>
+							<li>grid-column-gap</li>
+							<li>grid-row-gap</li>
+							<li>grid-gap (shorthand for grid-row-gap and grid-column-gap)</li>
+						</ul>
+					</section>
+					<section>
+					<pre class=" language-language">
+						<code class="-css language-language" data-trim data-noescape>.grid-container {
+	grid-template-columns: 100px 100px 100px;
+	grid-template-rows: 50px 50px 50px;
+	grid-column-gap: 10px;
+	grid-row-gap: 15px;
+}
+						</code>
+					</pre>
+					<img style="border: none;" src="lib/img/grid-gap.svg" alt="Example of grid-gap" height="350px">
+					</section>
+			  </section>
+			</div>
+		  </div>
+		
+		  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		  <script src="lib/js/head.min.js"></script>
+		  <script src="js/reveal.js"></script>
+		
+		  <script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+			  dependencies: [{
+				  src: 'plugin/markdown/marked.js',
+				},
+				{
+				  src: 'plugin/markdown/markdown.js',
+				},
+				{
+				  src: 'plugin/notes/notes.js',
+				  async: true,
+				},
+				{
+				  src: 'plugin/highlight/highlight.js',
+				  async: true,
+				  callback: function () {
+					hljs.initHighlightingOnLoad();
+				  },
+				},
+			  ],
+			});
+		  </script>
+	</body>
+</html>
