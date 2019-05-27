@@ -32,16 +32,50 @@
 			  <section>
 				<h3>Contents</h3>
 				<ul>
-				  <li><a href="#/2">Terminology</a></li>
-				  <li><a href="#/3">Fr Unit</a></li>
-				  <li><a href="#/4">Justification and Alignment</a></li>
-				  <li><a href="#/5">Grid Gap</a></li>
-				  <li><a href="#/6">Benefits</a></li>
+					<li><a href="#/2">CSS Layouts History</a></li>
+					<li><a href="#/3">Grid vs Flexbox</a></li>
+					<li><a href="#/4">Terminology</a></li>
+				  	<li><a href="#/5">Gap</a></li>
+				  	<li><a href="#/6">Special rules</a></li>
+				  	<li><a href="#/7">Fr Unit</a></li>
+				  	<li><a href="#/8">Justification and Alignment</a></li>
+				  	<li><a href="#/9">Benefits</a></li>
 				</ul>
 			  </section>
+			<section>
+				<section>
+					<h3>CSS Layouts History</h3>
+				</section>
+				<section>
+					<ol>
+						<li>Table layout</li>
+						<li>Float</li>
+						<li>CSS Frameworks</li>
+						<li>Flexbox</li>
+						<li>CSS Grid</li>
+					</ol>
+				</section>
+			</section>
+			<section>
+					<section>
+						<h3>Grid vs Flexbox</h3>
+					</section>
+					<section>
+						<ul>
+							<li>Grid does NOT replace Flexbox</li>
+							<li>Flexbox best for aligning 1D layouts</li>
+							<li>Grid creates 2D layouts</li>
+							<li>Grid can be used in Flexbox and vice versa</li>
+						</ul>
+					</section>
+				</section>
 			  <section data-transition="slide">
 				<section>
 				  <h3>Terminology</h3>
+				</section>
+				<section>
+				  <h3>CSS Grid Layout</h3>
+				  <img src="lib/img/css-grid-layout.jpg" alt="css-grid-layout" width="850px" />
 				</section>
 				<section>
 					<h3>Grid Container and Grid Items</h3>
@@ -56,17 +90,9 @@
 				  <img src="lib/img/Grid-Container.png" alt="Grid-Container" width="500px" />
 				</section>
 				<section>
-					<h3>Special rules:</h3>
-					<ul>
-						<li>The <strong>float</strong> and <strong>clear</strong> properties do not apply to grid items</li>
-						<li>The <strong>vertical-align</strong> property does not affect grid items</li>
-						<li>The <strong>::first-line</strong> and <strong>::first-letter</strong> pseudo-elements do not apply to the grid container</li>
-					</ul>
-				</section>
-				<section>
 					<h4>Grid Lines</h4>
-					<p style="text-align: left;">Grid lines are the horizontal and vertical lines which divide the grid. Each grid line has a referencing number, starting from the outer-most border of the grid container.</p>
-				  	<img src="lib/img/Grid-Lines.png" alt="Grid-Lines" width="500px" />
+					<p style="text-align: left; font-size: 60%">Grid lines are the horizontal and vertical lines which divide the grid. Each grid line has a referencing number, starting from the outer-most border of the grid container.</p>
+				  	<img src="lib/img/Grid-Lines.png" alt="Grid-Lines" width="600px" />
 				</section>
 				<section>
 					<h4>Grid Columns, Grid Rows, and Grid Tracks</h4>
@@ -99,7 +125,47 @@
 			  </section>
 			  <section>
 					<section>
+						<h3>Gap</h3>
+					</section>
+					<section>
+						<h3>Properties:</h3>
+						<ul>
+							<li>grid-column-gap</li>
+							<li>grid-row-gap</li>
+							<li>grid-gap (shorthand for grid-row-gap and grid-column-gap)</li>
+						</ul>
+					</section>
+					<section>
+					<pre class=" language-language">
+						<code class="-css language-language" data-trim data-noescape>.grid-container {
+	grid-template-columns: 100px 100px 100px;
+	grid-template-rows: 50px 50px 50px;
+	grid-column-gap: 10px;
+	grid-row-gap: 15px;
+}
+						</code>
+					</pre>
+					<img style="border: none;" src="lib/img/grid-gap.svg" alt="Example of grid-gap" height="350px">
+					</section>
+			  </section>
+			  <section>
+				<section>
+					<h3>Special rules:</h3>
+				</section>
+				<section>
+					<ul>
+						<li>The <strong>float</strong> and <strong>clear</strong> properties do not apply to grid items</li>
+						<li>The <strong>vertical-align</strong> property does not affect grid items</li>
+						<li>The <strong>::first-line</strong> and <strong>::first-letter</strong> pseudo-elements do not apply to the grid container</li>
+					</ul>
+				</section>
+			</section>
+			  <section>
+					<section>
 						<h3>Fr Unit</h3>
+					</section>
+					<section>
+						<img src="lib/img/fr-unit.jpg" alt="fr-unit" height="500px">
 					</section>
 					<section>
 						<p class="codepen" data-height="440" data-theme-id="light" data-default-tab="css,result" data-user="mbulldozer" data-slug-hash="ZNrwVL" style="height: 441px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Fr unit">
@@ -122,7 +188,6 @@
 							<li>align-content</li>
 							<li>justify-self</li>
 							<li>align-self</li>
-							<li>place-self</li>
 						</ul>
 					</section>
 					<section>
@@ -302,47 +367,6 @@
 									</tr>
 								</tbody>
 							</table>
-					</section>
-					<section>
-							<p>place-self</p>
-							<p>(sets both the align-self and justify-self properties)</p>
-							<table>
-								<tbody>
-									<tr>
-										<td>center</td>
-										<td>center stretch</td>
-									</tr>
-									<tr>
-										<td><img src="lib/img/place-self-center.svg" alt="Example of place-self set to center" height="200px"></td>
-										<td><img src="lib/img/place-self-center-stretch.svg" alt="Example of place-self set to center stretch" height="200px"></td>
-									</tr>
-								</tbody>
-							</table>
-					</section>
-			  </section>
-			  <section>
-					<section>
-						<h3>Grid Gap</h3>
-					</section>
-					<section>
-						<h3>Properties:</h3>
-						<ul>
-							<li>grid-column-gap</li>
-							<li>grid-row-gap</li>
-							<li>grid-gap (shorthand for grid-row-gap and grid-column-gap)</li>
-						</ul>
-					</section>
-					<section>
-					<pre class=" language-language">
-						<code class="-css language-language" data-trim data-noescape>.grid-container {
-	grid-template-columns: 100px 100px 100px;
-	grid-template-rows: 50px 50px 50px;
-	grid-column-gap: 10px;
-	grid-row-gap: 15px;
-}
-						</code>
-					</pre>
-					<img style="border: none;" src="lib/img/grid-gap.svg" alt="Example of grid-gap" height="350px">
 					</section>
 			  </section>
 			  <section>
